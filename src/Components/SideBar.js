@@ -18,30 +18,35 @@ const SideBar = () => {
   if(windowWidth.current<600) {dispatch(closeMenu())}
 
   if(!isMenuOpen) return null;
+
+  // const mainList = ["Home" , "Shorts", "Subscribe"]
+  // const youList = ["Your Channel", "History", "Watch Later", "Your Videos"]
+  // const subscribtionList = ["Akshay Saini", "JavaScript Home", "SuperSuper"]
+  // const exploreList = ["Trainding", "Shopping", "Music", "Game", "Films", "Live", "News", "Sports", "Learning", "Podcast"]
   
   return (
-    <div className="flex flex-col items-center absolute md:static bg-white w-2/4 sm:w-2/12 ">
-      <ul className="mb-8 font-bold w-full py-2">
-        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><Link to="/"><FontAwesomeIcon icon={faHouse}/> Home</Link></li>
-        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon icon={faPause} /> Shorts</li>
-        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon icon={faServer} /> Subscription</li>
+    <div className="flex flex-col items-center absolute md:static bg-white w-2/4 sm:w-44 m-1  ">
+      <ul className="font-medium w-full py-2 border-b-2 border-slate-300  ">
+        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><Link to="/"><FontAwesomeIcon className='mr-3' icon={faHouse}/> Home</Link></li>
+        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon className='mr-3' icon={faPause} /> Shorts</li>
+        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon className='mr-3' icon={faServer} /> Subscription</li>
       </ul>
 
-      <ul className="my-8 font-medium w-full p-2">
+      <ul className="font-medium w-full p-2 border-b-2 border-slate-300">
         <h1 className="font-bold">You</h1>
-        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon icon={faUser} /> Your Chanel</li>
-        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"> <FontAwesomeIcon icon={faClockRotateLeft} /> History</li>
-        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon icon={faClock} /> Watch Later</li>
+        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon className='mr-3' icon={faUser} /> Your Chanel</li>
+        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"> <FontAwesomeIcon className='mr-3' icon={faClockRotateLeft} /> History</li>
+        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon className='mr-3' icon={faClock} /> Watch Later</li>
       </ul>
 
-      <ul className="my-8 font-medium w-full p-2">
+      <ul className="font-medium w-full p-2">
         <h1 className="font-bold">Explore</h1>
-        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon icon={faFire} /> Trending</li>
-        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon icon={faBagShopping} /> Shoping</li>
-        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon icon={faMusic} /> Music</li>
-        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon icon={faClapperboard} /> Film</li>
-        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon icon={faTowerBroadcast} /> Live</li>
-        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon icon={faGamepad} /> Gaming</li>
+        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon className='mr-3' icon={faFire} /> Trending</li>
+        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon className='mr-3' icon={faBagShopping} /> Shoping</li>
+        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon className='mr-3' icon={faMusic} /> Music</li>
+        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon className='mr-3' icon={faClapperboard} /> Film</li>
+        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon className='mr-3' icon={faTowerBroadcast} /> Live</li>
+        <li className="w-full p-2 px-4 hover:bg-slate-100 hover:rounded-lg"><FontAwesomeIcon className='mr-3' icon={faGamepad} /> Gaming</li>
       </ul>
     </div>
   )

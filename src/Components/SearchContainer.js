@@ -6,6 +6,7 @@ import { useSearchParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { OpenMenu } from '../utils/appSlice'
 import SearchVideoCard from './SearchVideoCard'
+import { SearchContainerShimmer } from './Shimmer'
 
 const SearchContainer = () => {
 
@@ -23,20 +24,21 @@ const SearchContainer = () => {
   },[videoID])
 
   const SearchVideo = async ()=>{
+    console.log("serch")
     const data = await fetch(YouTube_Search_API + videoID + "&key=" + API_KEY)
     const json = await data.json()
     setCardData(json?.items?.slice(1))
   }
   
-  if (cardData==null) return null;
+  if (cardData==null) return <SearchContainerShimmer/>;
   
   return (
     <div className="w-full">
       <Buttons/>
 
       <div className='flex flex-wrap w-full justify-center'>
-        {cardData?.map((item)=>(
-              <SearchVideoCard key= {item.id?.videoId} info = {item}/>
+        {cardData?.map((item,index)=>(
+              <SearchVideoCard key= {index} info = {item}/>
           )   
         )}
       </div>

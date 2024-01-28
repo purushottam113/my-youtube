@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import Menu from "../Assets/Menu.png"
-import Logo from "../Assets/tube.png"
+import Logo from "../Assets/Logo.svg"
 import Profile from "../Assets/profile.png"
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from '../utils/appSlice'
 import { Link } from 'react-router-dom'
-import { faMagnifyingGlass, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faArrowLeft, faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { clearLoginDetails } from '../utils/credentialSlice'
 import SearchBar from './SearchBar'
@@ -25,9 +25,9 @@ const Header = () => {
 
 
   return (
-    <div className='flex h-12 sm:h-16 justify-between items-center shadow-lg px-2 w-full'>
+    <div className='flex h-12 sm:h-12 justify-between items-center px-2 w-full mb-2'>
       {mobileScreen &&<div className="flex items-center w-4/12">
-        <img className="h-8 cursor-pointer" src={Menu} alt="MenuIcon" onClick={()=>{taggleMenuHandler()}} />
+        <div className="text-2xl w-9 h-9 cursor-pointer rounded-full hover:bg-slate-100 flex items-center justify-center"><FontAwesomeIcon className='' icon={faBars} onClick={()=>{taggleMenuHandler()}}/></div>
         <Link to="/"><img className='h-20' src={Logo} alt="Logo" /></Link>
       </div>}
     
@@ -47,7 +47,7 @@ const Header = () => {
 
         {mobileScreen && 
           (loginDetails ?
-             <> <div className="bg-red-600 rounded-full h-11 w-11 flex justify-center items-center text-white font-bold text-xl ">{loginDetails[0].toUpperCase()}</div>
+             <> <div className="bg-red-500 rounded-full h-9 w-9 flex justify-center items-center text-white font-bold text-xl ">{loginDetails[0].toUpperCase()}</div>
                <button className="bg-slate-100 px-3 py-2 mx-2 rounded-lg font-medium text-sm " 
                onClick={()=>(
                    dispatch(clearLoginDetails())
@@ -58,8 +58,8 @@ const Header = () => {
             </>
             :
            <>
-              <img className='h-11' src={Profile} alt="Profile" />                 
-              <button className="bg-slate-100 px-3 py-2 mx-2 rounded-lg font-medium text-sm " 
+              <img className='h-9' src={Profile} alt="Profile" />                 
+              <button className="bg-slate-100 px-3 py-2 mx-2 border-2 border-gray-700 rounded-lg font-medium text-sm " 
                 onClick={()=>{
                     dispatch(clearLoginDetails())
                   }

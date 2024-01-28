@@ -7,6 +7,7 @@ import { closeMenu} from '../utils/appSlice'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-regular-svg-icons'
 import { faShare, faDownload, faBell, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { WatchPageShimmer } from './Shimmer';
 
 const WatchPage = () => {
 
@@ -28,7 +29,7 @@ const WatchPage = () => {
     setVideoData(json);
   }
 
-  if (videoData===undefined) return null;
+  if (videoData===undefined) return <WatchPageShimmer />;
   
   const {channelTitle, title, publishedAt
   }= videoData.items[0].snippet

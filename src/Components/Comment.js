@@ -27,12 +27,6 @@ const Comment = ({name}, {message}) => {
     return ()=> clearInterval(timer)
   },[])
 
-  // const chatMsgSubmit = ()=>{
-
-  // }
-
-  // <div className='mt-2 mx-10 w-96 h-[480px] border border-black overflow-y-scroll flex flex-col-reverse'>
-
 
   return (
     <>
