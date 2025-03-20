@@ -1,7 +1,3 @@
-import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux';
-import { closeMenu } from '../utils/appSlice';
-
 export const MainContainerShimmer = () => {
 
   return (

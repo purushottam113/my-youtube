@@ -33,7 +33,7 @@ const SearchContainer = () => {
   if (cardData==null) return <SearchContainerShimmer/>;
   
   return (
-    <div className="w-full">
+    <div className="w-8/12">
       <Buttons/>
 
       <div className='flex flex-wrap w-full justify-center'>

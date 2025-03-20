@@ -6,7 +6,7 @@ const VideoCard = ({info}) => {
   const {viewCount}= info.statistics
 
   return (
-    <div className='md:h-64 md:w-72 w-[450px] md:m-3 my-4 md:p-2 items-start'>
+    <div className='md:h-64 md:w-72 w-[450px] md:m-3 my-4 md:p-2 rounded-lg items-start hover:bg-slate-100 hover:'>
       <img src={thumbnails.medium.url} alt="" className=" md:h-40 md:w-auto w-full border rounded-xl" />
       <h1 className="font-medium line-clamp-2">{title}</h1>
       <p className="text-xs font-medium text-gray-500">{channelTitle}</p>

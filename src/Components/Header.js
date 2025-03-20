@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import Menu from "../Assets/Menu.png"
 import Logo from "../Assets/Logo.svg"
 import Profile from "../Assets/profile.png"
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from '../utils/appSlice'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { faMagnifyingGlass, faArrowLeft, faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { clearLoginDetails } from '../utils/credentialSlice'
@@ -14,6 +13,12 @@ import SearchBar from './SearchBar'
 const Header = () => {
 
   const[mobileScreen, SetMobileScreen] = useState(true)
+  const navigate = useNavigate();
+
+  const goHomeHandler = () => {
+    navigate("/");
+    window.location.reload()
+  }
 
   const loginDetails = useSelector(store => store.login?.loginDetails[0]?.email)
 
@@ -28,7 +33,7 @@ const Header = () => {
     <div className='flex h-12 sm:h-12 justify-between items-center px-2 w-full mb-2'>
       {mobileScreen &&<div className="flex items-center w-4/12">
         <div className="text-2xl w-9 h-9 cursor-pointer rounded-full hover:bg-slate-100 flex items-center justify-center"><FontAwesomeIcon className='' icon={faBars} onClick={()=>{taggleMenuHandler()}}/></div>
-        <Link to="/"><img className='h-20' src={Logo} alt="Logo" /></Link>
+        <img className='h-20' src={Logo} alt="Logo" onClick={()=>(goHomeHandler())}/>
       </div>}
     
           {<SearchBar screen = {mobileScreen} />}
@@ -67,7 +72,6 @@ const Header = () => {
                 <Link to="login"> LogIN </Link>
               </button>
               </>)}
-
 
       </div>
     </div>

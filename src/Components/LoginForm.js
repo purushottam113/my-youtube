@@ -4,12 +4,14 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
 import { addLoginDetails } from '../utils/credentialSlice';
 import { useNavigate } from 'react-router-dom';
+import { closeMenu } from '../utils/appSlice';
 
 const Basic = () => {
 
     const navigate =useNavigate();
 
     const dispatch = useDispatch()
+    dispatch(closeMenu())
 
     return(
       

@@ -19,10 +19,7 @@ const SideBar = () => {
 
   if(!isMenuOpen) return null;
 
-  // const mainList = ["Home" , "Shorts", "Subscribe"]
-  // const youList = ["Your Channel", "History", "Watch Later", "Your Videos"]
-  // const subscribtionList = ["Akshay Saini", "JavaScript Home", "SuperSuper"]
-  // const exploreList = ["Trainding", "Shopping", "Music", "Game", "Films", "Live", "News", "Sports", "Learning", "Podcast"]
+
   
   return (
     <div className="flex flex-col items-center absolute md:static bg-white w-2/4 sm:w-44 m-1  ">

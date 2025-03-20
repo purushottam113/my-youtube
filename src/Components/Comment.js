@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import React from 'react'
 import logo from "../Assets/profile.png"
-import { Live_chat } from '../utils/Constant'
 import { useDispatch, useSelector } from "react-redux"
 import { addMessages } from '../utils/chatSlice';
 import { RandomNameGenrator } from '../utils/helper'
